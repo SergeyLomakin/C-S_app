@@ -8,7 +8,7 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
 # GUI - создание таблицы QModel, для отображения в окне программы.
 def gui_create_model(db):
-    list_user = db.active_user_list()
+    list_user = db.active_users_list()
     list = QStandardItemModel()
     list.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
     for row in list_user:
