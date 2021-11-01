@@ -146,6 +146,14 @@ class ServerStorage:
             query = query.filter(self.AllUsers.name == username)
         return query.all()
 
+    #
+    def get_contact(self, username):
+        pass
+
+    #
+    def message_history(self):
+        pass
+
 
 if __name__ == '__main__':
     db = ServerStorage()
