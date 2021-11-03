@@ -222,7 +222,7 @@ class ServerStorage:
             self.LoginHistory.ip_address,
             self.LoginHistory.port
         ).join(self.AllUsers)
-        # фильтрация, ксли задано имя
+        # фильтрация, если задано имя
         if username:
             query = query.filter(self.AllUsers.name == username)
         return query.all()
@@ -270,5 +270,5 @@ if __name__ == '__main__':
     db.add_contact('test1', 'test3')
     db.add_contact('test1', 'test6')
     db.remove_contact('test1', 'test3')
-    db.process_message('McG2', '1111')
+    db.process_message('test2', 'test1')
     print(db.message_history())
