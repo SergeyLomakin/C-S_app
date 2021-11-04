@@ -9,10 +9,10 @@ sys.path.append('../')
 from client.main_window_conv import Ui_MainClientWindow
 from client.add_contact import AddContactDialog
 from client.del_contact import DelContactDialog
-from client.client_database import ClientDatabase
+from client.database import ClientDatabase
 from client.transport import ClientTransport
 from client.start_dialog import UserNameDialog
-from errors import ServerError
+from common.errors import ServerError
 
 logger = logging.getLogger('client')
 

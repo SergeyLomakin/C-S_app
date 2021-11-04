@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSignal, QObject
 sys.path.append('../')
 from common.utils import *
 from common.variables import *
-from errors import ServerError
+from common.errors import ServerError
 
 # Логер и объект блокировки для работы с сокетом.
 logger = logging.getLogger('client')

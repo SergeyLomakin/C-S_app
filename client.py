@@ -1,13 +1,13 @@
-import argparse
 import logging
 import logs.config_client_log
+import argparse
 import sys
 from PyQt5.QtWidgets import QApplication
 
-from common.utils import *
-from errors import ServerError
-from decos import log
-from client.client_database import ClientDatabase
+from common.variables import *
+from common.errors import ServerError
+from common.decos import log
+from client.database import ClientDatabase
 from client.transport import ClientTransport
 from client.main_window import ClientMainWindow
 from client.start_dialog import UserNameDialog
@@ -31,13 +31,13 @@ def arg_parser():
     # проверим подходящий номер порта
     if not 1023 < server_port < 65536:
         logger.critical(
-            f'Попытка запуска клиента с неподходящим номером порта: {server_port}. '
-            f'Допустимы адреса с 1024 до 65535. Клиент завершается.')
+            f'Попытка запуска клиента с неподходящим номером порта: {server_port}. Допустимы адреса с 1024 до 65535. Клиент завершается.')
         exit(1)
 
     return server_address, server_port, client_name
 
 
+# Основная функция клиента
 if __name__ == '__main__':
     # Загружаем параметы коммандной строки
     server_address, server_port, client_name = arg_parser()
